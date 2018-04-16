@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="articleInfo"
+            type="com.soumya.wwdablu.sangbad.network.model.Articles"
+            />
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        android:elevation="8dp"
+        app:cardBackgroundColor="@color/source_item_bg"
+        android:layout_margin="8dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/iv_article_image"
+                android:src="@drawable/newspaper"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/article_image_cd"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                app:articleImage="@{articleInfo.urlToImage}"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_article_title"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_below="@id/iv_article_image"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="@{articleInfo.title}"
+                tools:text="Great news for the people of earth"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_article_author"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_below="@id/tv_article_title"
+                app:authorName="@{articleInfo.author}"
+                tools:text="Ramakrishna"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_article_description"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:maxLines="10"
+                android:ellipsize="end"
+                android:text="@{articleInfo.description}"
+                android:layout_below="@id/tv_article_author"
+                tools:text="The paramhansa who will guide us spiritually with Holy Mother."
+                />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

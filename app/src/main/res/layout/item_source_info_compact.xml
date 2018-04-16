@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="sourceInfo"
+            type="com.soumya.wwdablu.sangbad.network.model.Sources"
+            />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/iv_source_logo_compact"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/logo_of_the_news_source"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/newspaper"
+            />
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:id="@+id/iv_source_category_compact"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/source_type"
+            app:sourceType="@{sourceInfo.category}"
+            tools:src="@drawable/general"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_source_name_compact"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="36dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="@{sourceInfo.name}"
+            android:layout_toEndOf="@id/iv_source_logo_compact"
+            tools:text="Acme News"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_source_description_compact"
+            android:textSize="16sp"
+            android:text="@{sourceInfo.description}"
+            android:layout_below="@id/tv_source_name_compact"
+            android:layout_toEndOf="@id/iv_source_logo_compact"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="36dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            tools:text="This provides the description for the news source."
+            />
+
+    </RelativeLayout>
+
+</layout>

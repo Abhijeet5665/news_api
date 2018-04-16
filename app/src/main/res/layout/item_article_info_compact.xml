@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="articleInfo"
+            type="com.soumya.wwdablu.sangbad.network.model.Articles"
+            />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/iv_article_image_compact"
+            android:src="@drawable/newspaper"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/article_image_cd"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_centerVertical="true"
+            app:articleImage="@{articleInfo.urlToImage}"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_article_title_compact"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toEndOf="@id/iv_article_image_compact"
+            android:maxLines="4"
+            android:ellipsize="end"
+            android:text="@{articleInfo.title}"
+            android:layout_centerVertical="true"
+            tools:text="Great news for the people of earth"
+            />
+
+    </RelativeLayout>
+
+</layout>
+

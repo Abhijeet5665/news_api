@@ -1,0 +1,27 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Layout Mode"
+        android:key="key_layout_mode">
+
+        <ListPreference
+            android:title="Source Layout Mode"
+            android:key="key_list_source_mode"
+            android:entries="@array/pref_layout_mode"
+            android:entryValues="@array/pref_layout_mode_value"
+            android:defaultValue="1"
+            android:summary="@string/mode_selected_pref"
+            />
+
+        <ListPreference
+            android:title="Article Layout Mode"
+            android:key="key_list_article_mode"
+            android:entries="@array/pref_layout_mode"
+            android:entryValues="@array/pref_layout_mode_value"
+            android:defaultValue="1"
+            android:summary="@string/mode_selected_pref"
+            />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

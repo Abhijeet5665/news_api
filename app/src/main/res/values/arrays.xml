@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="pref_layout_mode">
+        <item>@string/compact</item>
+        <item>@string/card</item>
+    </string-array>
+
+    <string-array name="pref_layout_mode_value">
+        <item>0</item>
+        <item>1</item>
+    </string-array>>
+
+</resources>
